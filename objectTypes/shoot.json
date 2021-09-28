@@ -1,0 +1,60 @@
+{
+	"name": "Shoot",
+	"plugin-id": "Sprite",
+	"sid": 897429338437605,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Projétil",
+			"sid": 242201656902277
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "grayscale",
+			"name": "EscalaDeCinza"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 4,
+						"originX": 0.625,
+						"originY": 0.5,
+						"originalSource": "H:\\Download\\SpaceShooterAssetPack_Projectiles.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7351585,
+						"collisionPoly": {
+							"points": [
+								0.994140625,
+								0,
+								0.994140625,
+								1,
+								0.25,
+								1,
+								0.25,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 469734915547148,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

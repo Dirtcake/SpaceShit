@@ -1,0 +1,30 @@
+{
+	"name": "Menu",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Toque",
+					"sid": 782189765235986,
+					"parameters": {
+						"object": "PlayButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 313226193942821,
+					"parameters": {
+						"layout": "1"
+					}
+				}
+			],
+			"sid": 562127138574767
+		}
+	],
+	"sid": 917924907720890
+}

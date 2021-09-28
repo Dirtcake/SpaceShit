@@ -1,0 +1,26 @@
+{
+	"name": "Constantes",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Direita",
+			"type": "string",
+			"initialValue": "DIREITA",
+			"comment": "Constante que define a direção de movimento do jogador",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 937367246269541
+		},
+		{
+			"eventType": "variable",
+			"name": "Esquerda",
+			"type": "string",
+			"initialValue": "EQUERDA",
+			"comment": "Constante que define a direção de movimento do jogador",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 537727978900016
+		}
+	],
+	"sid": 750879810906952
+}

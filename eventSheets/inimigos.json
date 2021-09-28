@@ -1,0 +1,121 @@
+{
+	"name": "Inimigos",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Inicialização",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy1",
+							"sid": 992758122439218,
+							"parameters": {
+								"object": "Nave"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "EnemyDamage",
+							"sid": 609266449689316
+						}
+					],
+					"sid": 337588182155391
+				}
+			],
+			"sid": 725965202073991
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Inimigo - 1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Shoot",
+							"sid": 407070325771823,
+							"parameters": {
+								"object": "Enemy1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Enemy1",
+							"sid": 595924035008061,
+							"parameters": {
+								"instance-variable": "Vidas",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Shoot",
+							"sid": 911675408900661
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Shoot",
+							"sid": 820397518898822,
+							"parameters": {
+								"object": "LaserHit",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 495894133783305
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy1",
+							"sid": 132754925155805,
+							"parameters": {
+								"instance-variable": "Vidas",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemy1",
+							"sid": 612135668305065
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy1",
+							"sid": 542224564746500,
+							"parameters": {
+								"object": "Explosoes",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 323000511480781
+				}
+			],
+			"sid": 369052838244533
+		}
+	],
+	"sid": 598266293755356
+}

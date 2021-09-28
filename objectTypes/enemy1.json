@@ -1,0 +1,67 @@
+{
+	"name": "Enemy1",
+	"plugin-id": "Sprite",
+	"sid": 933838124175453,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Vidas",
+			"type": "number",
+			"desc": "",
+			"sid": 591453125030995
+		},
+		{
+			"name": "Tag",
+			"type": "string",
+			"desc": "Define que é um inimigo",
+			"sid": 445820639116582
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "grayscale",
+			"name": "EscalaDeCinza"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 9,
+						"height": 7,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6028068,
+						"collisionPoly": {
+							"points": [
+								0.3437499999999998,
+								0.16517857142857142,
+								0.6354166666666672,
+								0.16071428571428573,
+								0.8715277777777778,
+								0.6964285714285717,
+								0.1215277777777778,
+								0.6919642857142864
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 539845499791860,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

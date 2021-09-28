@@ -1,0 +1,95 @@
+{
+	"name": "Nave",
+	"plugin-id": "Sprite",
+	"sid": 752400343400214,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "DIRECAO",
+			"type": "string",
+			"desc": "",
+			"sid": 340868272555530
+		},
+		{
+			"name": "Vida",
+			"type": "number",
+			"desc": "",
+			"sid": 368179159208617
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Plataforma",
+			"sid": 757252703254082
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Piscar",
+			"sid": 745701735258811
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "grayscale",
+			"name": "EscalaDeCinza"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "H:\\Download\\SpaceShooterAssetPack_Ships.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2367430,
+						"collisionPoly": {
+							"points": [
+								0.3937500000000004,
+								0.19375000000000003,
+								0.49531250000000027,
+								0.10625000000000001,
+								0.5968749999999998,
+								0.19375000000000006,
+								0.6874999999999997,
+								0.2937500000000001,
+								0.7875000000000006,
+								0.40000000000000097,
+								0.8593749999999998,
+								0.7937500000000006,
+								0.10624999999999994,
+								0.7937500000000003,
+								0.19375000000000003,
+								0.4062500000000004,
+								0.30625000000000013,
+								0.3062500000000003
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Tiro",
+								"x": 0.5,
+								"y": 0.1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 907104020850704,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

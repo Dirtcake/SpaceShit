@@ -1,0 +1,48 @@
+{
+	"name": "CameraHolder",
+	"plugin-id": "Sprite",
+	"sid": 681501346417661,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "CentrarEm",
+			"sid": 528964178131906
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Atrelar",
+			"sid": 504818575339092
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5008396,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 822646590717646,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,134 @@
+{
+	"name": "Fase",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "ContadorBug",
+			"type": "number",
+			"initialValue": "7",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 670466399064684
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Player"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Inimigos"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Camera Control",
+			"description": "Grupo com funções de controle da camera",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 391068002736717
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "Damage",
+							"sid": 725624220879576,
+							"behaviorType": "Atrelar",
+							"parameters": {
+								"pin-to": "CameraHolder",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "CameraHolder",
+							"sid": 446259814473873,
+							"behaviorType": "Atrelar",
+							"parameters": {
+								"pin-to": "Sprite",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 224728160377883
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 701895326236020,
+							"parameters": {
+								"first-value": "Nave.Y",
+								"comparison": 2,
+								"second-value": "Sprite.Y"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 498046506934102,
+							"parameters": {
+								"first-value": "CameraHolder.Y",
+								"comparison": 4,
+								"second-value": "192/2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Sprite",
+							"sid": 685124886745051,
+							"parameters": {
+								"y": "Nave.Y"
+							}
+						}
+					],
+					"sid": 267889799449603
+				}
+			],
+			"sid": 173168067413143
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 185582382126649
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Texto",
+					"sid": 957276504009957,
+					"parameters": {
+						"text": "ContadorBug"
+					}
+				}
+			],
+			"sid": 394601936442000
+		}
+	],
+	"sid": 558112075768958
+}

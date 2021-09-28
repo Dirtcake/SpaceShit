@@ -1,0 +1,475 @@
+{
+	"name": "Player",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Constantes"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 438977804938887
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "Rastro",
+					"sid": 641611651312959,
+					"behaviorType": "Atrelar",
+					"parameters": {
+						"pin-to": "Nave",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				}
+			],
+			"sid": 382905207162931
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movimentação",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Nave",
+							"sid": 610053058616924,
+							"parameters": {
+								"object": "Base"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-y",
+							"objectClass": "Nave",
+							"sid": 263459588905660,
+							"behaviorType": "Plataforma",
+							"parameters": {
+								"vector-y": "-120"
+							}
+						}
+					],
+					"sid": 141701655392470
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Nave",
+							"sid": 341709700741190,
+							"parameters": {
+								"instance-variable": "DIRECAO",
+								"comparison": 0,
+								"value": "Direita"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Nave",
+							"sid": 599862904296651,
+							"behaviorType": "Plataforma",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 850926928956033
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Nave",
+							"sid": 505081922417263,
+							"parameters": {
+								"instance-variable": "DIRECAO",
+								"comparison": 0,
+								"value": "Esquerda"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Nave",
+							"sid": 536236362750399,
+							"behaviorType": "Plataforma",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 686184345141401
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Nave",
+							"sid": 123530611970077,
+							"parameters": {
+								"object": "Inversor"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 675442024028158,
+							"parameters": {
+								"variable": "ContadorBug",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 948845248864796,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Nave",
+									"sid": 673024993467712,
+									"parameters": {
+										"instance-variable": "DIRECAO",
+										"comparison": 0,
+										"value": "\"DIREITA\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Nave",
+									"sid": 271415809011525,
+									"parameters": {
+										"instance-variable": "DIRECAO",
+										"value": "Esquerda"
+									}
+								}
+							],
+							"sid": 347468202183173
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 310749445921695
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Nave",
+									"sid": 140620804190860,
+									"parameters": {
+										"instance-variable": "DIRECAO",
+										"value": "Direita"
+									}
+								}
+							],
+							"sid": 523951141512506
+						}
+					]
+				}
+			],
+			"sid": 247612390941894
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Disparo",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Teclado",
+							"sid": 835767447077151,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Toque",
+							"sid": 234168329819651
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-y",
+							"objectClass": "Nave",
+							"sid": 508417778544264,
+							"behaviorType": "Plataforma",
+							"parameters": {
+								"vector-y": "-250"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Nave",
+							"sid": 145060757141445,
+							"parameters": {
+								"object": "Shoot",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Shoot",
+							"sid": 999438752718703,
+							"parameters": {
+								"angle": "-90"
+							}
+						}
+					],
+					"sid": 869663309743020,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Shoot",
+							"sid": 659285009824618,
+							"parameters": {
+								"object": "Base"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Shoot",
+							"sid": 776660083543175
+						}
+					],
+					"sid": 674464524484579
+				}
+			],
+			"sid": 182317703422066
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Vida",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Nave",
+							"sid": 129880961492694,
+							"parameters": {
+								"object": "Damage"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-y",
+							"objectClass": "Nave",
+							"sid": 746816570346898,
+							"behaviorType": "Plataforma",
+							"parameters": {
+								"vector-y": "-300"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Nave",
+							"sid": 647592370634039,
+							"disabled": true,
+							"parameters": {
+								"instance-variable": "Vida",
+								"value": "1"
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "CameraHolder",
+							"sid": 541051329984142,
+							"disabled": true,
+							"behaviorType": "CentrarEm",
+							"parameters": {
+								"magnitude": "15",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Nave",
+							"sid": 633542425351177,
+							"disabled": true,
+							"behaviorType": "Piscar",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"callFunction": "EnemyDamage",
+							"sid": 269313516703180
+						}
+					],
+					"sid": 178501046943204
+				}
+			],
+			"sid": 271047982930290
+		},
+		{
+			"functionName": "EnemyDamage",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "is-flashing",
+					"objectClass": "Nave",
+					"sid": 596931024987812,
+					"behaviorType": "Piscar",
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Nave",
+					"sid": 169537546403298,
+					"parameters": {
+						"instance-variable": "Vida",
+						"value": "1"
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "CameraHolder",
+					"sid": 724243309728363,
+					"behaviorType": "CentrarEm",
+					"parameters": {
+						"magnitude": "10",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "Nave",
+					"sid": 109148521837152,
+					"behaviorType": "Piscar",
+					"parameters": {
+						"on-time": "0.1",
+						"off-time": "0.1",
+						"duration": "1.0"
+					}
+				}
+			],
+			"sid": 877850587532858,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 432263797358645,
+							"parameters": {
+								"object": "Heart"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 861913108669012,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 562423949735183,
+									"parameters": {
+										"first-value": "Heart.Id",
+										"comparison": 3,
+										"second-value": "Nave.Vida"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Heart",
+									"sid": 982792744232662,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 763542018790758
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 520352354152480
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Heart",
+									"sid": 751625997325555,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 875270606817717
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 586498920096087
+}

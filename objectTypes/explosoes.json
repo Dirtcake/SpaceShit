@@ -1,0 +1,26 @@
+{
+	"name": "Explosoes",
+	"plugin-id": "Particles",
+	"sid": 172674355059631,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Atrelar",
+			"sid": 948035818096317
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 5,
+		"height": 5,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5470605,
+		"useCollisionPoly": true
+	}
+}

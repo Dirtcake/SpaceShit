@@ -1,0 +1,62 @@
+{
+	"name": "Logo",
+	"plugin-id": "Sprite",
+	"sid": 122345921386855,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "waterbg",
+			"name": "FundoDeÁgua"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 258,
+						"height": 134,
+						"originX": 0.4806201550387597,
+						"originY": 0.5149253731343284,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1127950,
+						"collisionPoly": {
+							"points": [
+								0.21705426356589147,
+								0.007462686567164179,
+								0.4806201550387597,
+								0.007462686567164179,
+								0.7403100775193798,
+								0.007462686567164179,
+								0.9922480620155039,
+								0.5149253731343284,
+								0.7248062015503876,
+								0.9850746268656716,
+								0.4806201550387597,
+								0.9850746268656716,
+								0.23255813953488372,
+								0.9850746268656716,
+								0.027131782945736434,
+								0.5149253731343284
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 679385294965255,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
